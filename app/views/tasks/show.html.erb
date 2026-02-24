@@ -1,0 +1,11 @@
+<%= link_to "Back to all tasks", tasks_path %>
+<h1>Details 🔍</h1>
+<h2><%= @task.title %></h2>
+
+<% @status = @task.completed ? "checked" : "" %>
+
+<span>
+    <p><%= @task.details %></p> <input type="checkbox" @status>
+    <br>
+    <%= link_to "Delete task", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</span>
